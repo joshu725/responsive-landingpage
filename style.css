@@ -20,6 +20,10 @@ body, div, ul, li, nav, header, footer, a, label {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
+
+    position: relative;
+    z-index: 10;
 
     container-type: inline-size;
     container-name: header;
@@ -52,7 +56,7 @@ body, div, ul, li, nav, header, footer, a, label {
     font-weight: 800;
     position: absolute;
     right: 20px;
-    z-index: 1;
+    z-index: 10;
 }
 
 
@@ -157,29 +161,32 @@ body, div, ul, li, nav, header, footer, a, label {
     flex-direction: column;
     justify-content: center;
     max-width: 1400px;
-    margin: 20px 0;
+    margin: 20px;
 }
 
 .profile__data-container {
-    max-width: 600px;
+    max-width: 750px;
     padding: 20px;
     background-color: #fff;
     margin: auto;
+    border-radius: 0 0 25px 25px;
 }
 
 .profile__img-container {
-    max-height: 600px;
+    max-height: 750px;
     overflow: hidden;
     margin: 0 auto;
+    border-radius: 25px 25px 0 0;
 }
 
 .profile__img {
     max-width: 100%;
-    width: 600px;
+    width: 750px;
 }
 
 h1 {
     color: #8294C4;
+    margin-top: 0;
 }
 
 .profile__skills-container h2 {
@@ -190,7 +197,7 @@ h1 {
     list-style: none;
     display: flex;
     margin: 10px;
-    max-width: 600px;
+    max-width: 800px;
     margin-left: 0;
     align-items: center;
 }
@@ -201,8 +208,8 @@ h1 {
     color: #362161;
     padding: 2px;
     font-size: 12px;
-    width: 80%;
-    margin: 4px;
+    width: 90%;
+    margin: 5px;
     margin-left: 0;
 }
 
@@ -266,5 +273,85 @@ h1 {
         max-height: initial;
         border-radius: 25px 0 0 25px;
         margin: 0;
+    }
+}
+
+/* ---------- Profile End ---------- */
+
+
+
+/* ---------- Portfolio ---------- */
+
+.portfolio {
+    background-color: #fff;
+    color: #DBDFEA;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    container-name: portfolio;
+    container-type: inline-size;
+    justify-content: space-evenly;
+    
+}
+
+.portfolio__title {
+    font-size: 3rem;
+    margin: 20px;
+    color: #8294C4;
+}
+
+.portfolio__project-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 12px;
+    padding: 20px;
+    min-height: 80vh;
+}
+
+.portfolio__project {
+    background-image: linear-gradient(#0008, #0004, #0008), url("img/itaru-hashida.png");
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    place-content: center;
+}
+
+.portfolio__project:hover {
+    opacity: 0.90;
+    outline: 2px solid #000b;
+}
+
+/* ---------- Portfolio Queries ---------- */
+
+@container portfolio (min-width: 900px) {
+    .portfolio__project-container {
+        grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    }
+
+    .portfolio__project:first-child {
+        grid-column: span 2;
+    }
+
+    .portfolio__project:nth-child(6) {
+        grid-column: span 2;
+    }
+}
+
+@container portfolio (min-width: 1300px) {
+    .portfolio__project-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    .portfolio__project:first-child {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .portfolio__project:nth-child(6) {
+        grid-column: span 4;
     }
 }
