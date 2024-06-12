@@ -8,7 +8,7 @@
 </head>
 <body>
     <!--Header-->
-    <header class="header">
+    <header class="header" id="header">
         <!--Icono para desplegar el menú en celulares-->
         <input type="checkbox" id="open-menu" class="header__checkbox">
         <label for="open-menu" class="header__open-nav-button">=</label>
@@ -23,20 +23,18 @@
         <!--Nav-->
         <nav class="header__nav">
             <ul class="header__nav-list">
-                <li class="header__nav-item"><a href="#">Biografia</a></li>
-                <li class="header__nav-item"><a href="#">Acerca</a></li>
-                <li class="header__nav-item"><a href="#">Nosotros</a></li>
+                <li class="header__nav-item"><a href="#profile">Biografia</a></li>
+                <li class="header__nav-item"><a href="#portfolio">Proyectos</a></li>
+                <li class="header__nav-item"><a href="#contact">Contacto</a></li>
             </ul>
         </nav>
     </header>
-
-    <main class="profile">
+    <!--Profile-->
+    <main class="profile" id="profile">
         <div class="profile__wrapper">
-
             <div class="profile__img-container">
                 <img src="img/itaru-hashida.png" alt="itaru hashida" class="profile__img">
             </div>
-
             <div class="profile__data-container">
                 <div class="profile__data">
                     <div class="profile__description">
@@ -86,8 +84,8 @@
             </div>
         </div>
     </main>
-
-    <section class="portfolio">
+    <!--Portfolio-->
+    <section class="portfolio" id="portfolio">
         <h2 class="portfolio__title">Proyectos realizados</h2>
         <div class="portfolio__project-container">
             <div class="portfolio__project">
@@ -110,5 +108,37 @@
             </div>
         </div>
     </section>
+    <!--Contact-->
+    <section class="form" id="contact">
+        <h2 class="form__title">Contacto</h2>
+        <form class="form__form">
+            <div class="form__input-container">
+                <label class="form__input-label">Nombre
+                    <input type="text" placeholder="Edward" class="aaaaa">
+                </label>
+            </div>
+            <div class="form__input-container">
+                <label class="form__input-label">Apellido
+                    <input type="text" placeholder="Edison">
+                </label>
+            </div>
+            <div class="form__input-container">
+                <label class="form__input-label">Correo
+                    <input type="email" placeholder="correo@ejemplo.com">
+                </label>
+            </div>
+            <div class="form__input-container">
+                <label class="form__input-label">Mensaje
+                    <textarea placeholder="Inserta tu mensaje..."></textarea>
+                </label>
+            </div>
+            <div class="form__input-container">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+    </section>
+    <footer>
+        © Copyright - <strong>Joshua A.R.</strong>
+    </footer>
 </body>
 </html>
